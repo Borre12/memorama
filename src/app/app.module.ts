@@ -19,7 +19,7 @@ import { MemoramaComponent } from './components/memorama/memorama.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MemoramaComponent
+    MemoramaComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,9 @@ import { MemoramaComponent } from './components/memorama/memorama.component';
     MatSidenavModule,
     MatCardModule,
     MatTableModule,
-    MatGridListModule
+    MatGridListModule,
+  ],
+  exports: [
   ],
   providers: [],
   bootstrap: [AppComponent]
