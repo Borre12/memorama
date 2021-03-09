@@ -4,7 +4,6 @@ body{
 .container {
   display: block;
   position: relative;
-  background: red;
 }
 .container::after {
   content: "";
