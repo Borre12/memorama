@@ -1,6 +1,10 @@
+body{
+  color: black;
+}
 .container {
   display: block;
   position: relative;
+  background: red;
 }
 .container::after {
   content: "";
@@ -16,4 +20,8 @@
 
 .memorama{
   padding: 10px;
+}
+img{
+  width: 90%;
+  height:100%;
 }
