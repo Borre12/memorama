@@ -32,6 +32,7 @@ export class MemoramaComponent implements OnInit {
   cont = 0;
   intentostotales = 62;
   contintentos = 0;
+  waiting: boolean = false;
   constructor() {
     this.cards = [];
 
@@ -57,7 +58,7 @@ export class MemoramaComponent implements OnInit {
   }
   // Funcion para encontrar la carta seleccionada
    cartaseleccionada(idx:any) {
-     if (!this.cards[idx].active) {
+     if (!this.cards[idx].active || this.waiting) {
        return;
      }
      this.cards[idx].visible = true;
@@ -75,11 +76,13 @@ export class MemoramaComponent implements OnInit {
        } else {
          // Tiempo para que la carta se voltee
          let th = this;
-         setTimeout(function() {
+         this.waiting = true;
+         setTimeout(() => {
            th.cards[th.guardarid].visible = false;
            th.cards[th.guardarid].active = true;
            th.cards[idx].visible = false;
            th.guardarid = null;
+           this.waiting = false;
          }, 0.2 * 1000)
        }
      }
